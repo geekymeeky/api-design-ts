@@ -1,38 +1,39 @@
 import { Router } from "express";
+import * as update from "./handlers/update";
+import * as product from "./handlers/product";
+
 
 const router = Router();
 /**
  * Product
  */
-router.get("/product", (req, res) => {
-  res.json({ message: "product" });
-});
+router.get("/product", product.getProducts);
 
-router.get("/product/:id", (req, res) => {});
+router.get("/product/:id", product.getOneProduct);
 
-router.post("/product", (req, res) => {});
+router.post("/product", product.createProduct);
 
-router.put("/product/:id", (req, res) => {});
+router.put("/product/:id", product.updateProduct);
 
-router.delete("/product/:id", (req, res) => {});
+router.delete("/product/:id", product.deleteProduct);
 
 /**
- * Update
+ * Update 
  */
-router.get("/update", (req, res) => {});
+router.get("/update", update.getUpdates);
 
-router.get("/update/:id", (req, res) => {});
+router.get("/update/:id", update.getOneUpdate);
 
-router.post("/update", (req, res) => {});
+router.post("/update", update.createUpdate);
 
-router.put("/update/:id", (req, res) => {});
+router.put("/update/:id", update.updateUpdate);
 
-router.delete("/update/:id", (req, res) => {});
+router.delete("/update/:id", update.deleteUpdate);
 
 /**
- * UpdatePoint
+ * UpdatePoint 
  */
-
+// TODO: updatepoint handlers
 router.get("/updatepoint", (req, res) => {});
 
 router.get("/updatepoint/:id", (req, res) => {});
